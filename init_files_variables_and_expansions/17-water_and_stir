@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(printf "%o" $(( $(echo $WATER | tr 'water' '01234') + $(echo $STIR | tr 'stir.' '01234') )) | tr '01234567' 'bestchol')
+echo $(printf '%o' $(( $(python3 -c "print(int('$WATER'.replace('w','0').replace('a','1').replace('t','2').replace('e','3').replace('r','4'), 5))") + $(python3 -c "print(int('$STIR'.replace('s','0').replace('t','1').replace('i','2').replace('r','3').replace('.','4'), 5))") )) | tr '01234567' 'bestchol')
